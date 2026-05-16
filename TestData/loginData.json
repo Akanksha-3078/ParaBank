@@ -1,0 +1,14 @@
+[
+  {
+    "username": "invaliduser_899679",
+    "password": "wrongpass",
+    "expected": "faliure"
+  },
+  {
+    "username": "momos789",
+    "password": "Test@123",
+    "expected": "success"
+    
+  }
+]
+

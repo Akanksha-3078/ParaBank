@@ -1,0 +1,16 @@
+[{
+    "testName": "Valid Customer",
+    "customerId": 13677,
+    "expectedStatus": 200
+  },
+  {
+    "testName": "Invalid Customer",
+    "customerId": 999999,
+    "expectedStatus": 400
+  },
+  {
+    "testName": "Non Existing Customer",
+    "customerId": 123456,
+    "expectedStatus": 400
+  }
+]

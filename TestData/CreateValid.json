@@ -1,0 +1,10 @@
+[
+  {
+    "testName": "Valid Customer",
+    "customerId": 12434,
+    "expectedStatus": 200,
+    "id": 13677,
+    "type": "CHECKING",
+    "balance": 100.00
+  }
+]

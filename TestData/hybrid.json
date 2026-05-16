@@ -1,0 +1,17 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "New York Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "phone": "1234567890",
+    "ssn": "12345",
+    "username": "jo",
+    "password": "Test@123",
+    "confirmPassword": "Test@123",
+    "accountType": "SAVINGS",
+    "expected": "success"
+  }
+]

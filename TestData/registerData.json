@@ -1,0 +1,49 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "New York Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "phone": "1234567890",
+    "ssn": "12345",
+    "username": "jojo_123",
+    "password": "Test@123",
+    "confirmPassword": "Test@123",
+    "accountType": "SAVINGS",
+    "expected": "success"
+  },
+
+  {
+    "firstName": "Mark",
+    "lastName": "Smith",
+    "address": "California Street",
+    "city": "LA",
+    "state": "CA",
+    "zipCode": "90001",
+    "phone": "9999999999",
+    "ssn": "77777",
+    "username": "marks_6978",
+    "password": "Test@123",
+    "confirmPassword": "Test@123",
+    "accountType": "CHECKING",
+    "expected": "success"
+  },
+
+  {
+    "firstName": "Raghav",
+    "lastName": "Smith",
+    "address": "California Street",
+    "city": "LA",
+    "state": "CA",
+    "zipCode": "90001",
+    "phone": "9999999999",
+    "ssn": "77777",
+    "username": "raghav_9078",
+    "password": "Test@123",
+    "confirmPassword": "Wrong@123",
+    "accountType": "SAVINGS",
+    "expected": "failure"
+  }
+]
