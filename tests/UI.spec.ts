@@ -6,7 +6,8 @@ import { LoginPage } from '../Pages/LoginPage';
 import { OpenNewAccountPage } from '../Pages/Openess';
 import { AccountOverviewPage } from '../Pages/AccountOverviwePage';
 import loginData from '../TestData/loginData.json';
-import registerData from '../TestData/registerData.json'
+import registerData from '../TestData/registerData.json';
+import { generateUsername } from '../Utility/generateUser';
 
 
 test.describe('Registration Module', () => {
@@ -41,7 +42,7 @@ test.describe('Registration Module', () => {
     const username = `user${Date.now()}`;
 
     const userData = {
-      firstName: 'Akanksha',
+      firstName: 'Sanvu',
       lastName: 'Prasad',
       address: 'Kolkata',
       city: 'Kolkata',
@@ -77,54 +78,61 @@ test.describe('Registration Module', () => {
     await page.close();
   });
 
-  for (const data of loginData) {
 
-    test(
-      `Validate login with username: ${data.username}`,
-      async ({ page }) => {
 
-        const loginPage = new LoginPage(page);
+for (const data of loginData) {
 
-        await loginPage.navigate();
+  test(
+    `Validate login with username: ${data.password}`,
+    async ({ page }) => {
 
-        await loginPage.login(
+      const loginPage =
+        new LoginPage(page);
+
+      await loginPage.navigate();
+
+      await loginPage.login(
+        data.username,
+        data.password
+      );
+
+      if (data.expected === 'success') {
+
+        await loginPage.verifyLoginSuccess();
+
+        await loginPage.click(
+          'text=Log Out'
+        );
+      }
+
+      else {
+
+        await page.screenshot({
+          path:
+            `screenshots/login-failure-${data.username || 'empty-user'}.png`,
+          fullPage: true
+        });
+
+        await loginPage.verifyLoginFailure(
           data.username,
           data.password
         );
 
-        if (data.expected === 'success') {
+        await expect(
+          loginPage.usernameInput
+        ).toBeVisible();
 
-          await loginPage.verifyLoginSuccess();
-
-          // Logout after successful login
-          await loginPage.click('text=Log Out');
-        }
-
-        else {
-
-           await page.screenshot({
-  path: `screenshots/login-failure-${data.username}.png`,
-  fullPage: true
-});
-          await loginPage.verifyLoginFailure();
-
-          // Username field visible
-          await expect(
-            loginPage.usernameInput
-          ).toBeVisible();
-
-          // Password field visible
-          await expect(
-            loginPage.passwordInput
-          ).toBeVisible();
-        }
+        await expect(
+          loginPage.passwordInput
+        ).toBeVisible();
       }
-    );
-  }
+    }
+  );
+}
 
   for (const dataSet of registerData) {
 
-  test(`Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data }) => {
+  test(`Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data, browserName }) => {
 
     const registerPage =
       new RegisterPage(page);
@@ -140,8 +148,13 @@ test.describe('Registration Module', () => {
     );
     await loginPage.verifyOpenAccountLinkNotVisible();
     await registerPage.openRegisterPage();
+    const uniqueUsername = generateUsername(dataSet.username, browserName);
+  const userData = {
+  ...dataSet,
+  username: uniqueUsername
+};
 
-    await registerPage.registerUser(dataSet);
+    await registerPage.registerUser(userData);
 
     if (dataSet.expected === 'success') {
 

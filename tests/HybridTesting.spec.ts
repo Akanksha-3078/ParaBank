@@ -1,6 +1,6 @@
-import { expect } from '@playwright/test';
-import { test } from '../Fixture/BaseFixture';
-import { AccountsAPI } from '../Pages/APIUsers';
+// ✅ One import replaces both BaseFixture and APIFixture
+import { test, expect } from '../Fixture/Hybrid';
+
 import { RegisterPage } from '../Pages/RegisterPage';
 import { OpenNewAccountPage } from '../Pages/Openess';
 import { AccountOverviewPage } from '../Pages/AccountOverviwePage';
@@ -10,86 +10,51 @@ import hybridData from '../TestData/hybrid.json';
 
 for (const dataSet of hybridData) {
 
-  test(`E2E Hybrid Flow - ${dataSet.username} - ${dataSet.accountType}`, async ({ page, data }) => {
-    
+    test(`E2E Hybrid Flow - ${dataSet.username} - ${dataSet.accountType}`, async ({ page, data, apiContext, accountsAPI }) => {
 
-    // =========================
-    // PAGE OBJECT INIT
-    // =========================
-    const registerPage = new RegisterPage(page);
-    const openNewAccountPage = new OpenNewAccountPage(page);
-    const loginPage = new LoginPage(page);
-    const accountOverviewPage = new AccountOverviewPage(page);
-    const accountsAPI = new AccountsAPI();
-    await accountsAPI.init(); 
+        // PAGE OBJECT INIT
+        const registerPage = new RegisterPage(page);
+        const openNewAccountPage = new OpenNewAccountPage(page);
+        const loginPage = new LoginPage(page);
+        const accountOverviewPage = new AccountOverviewPage(page);
+        // ✅ accountsAPI is now injected directly — no manual instantiation needed
 
-    // =========================
-    // 1. OPEN APPLICATION (FROM FIXTURE)
-    // =========================
-    await page.goto(`${data.url}/index.htm`);
+        // 1. OPEN APPLICATION
+        await page.goto(`${data.url}/index.htm`);
+        await loginPage.verifyOpenAccountLinkNotVisible();
 
-    await loginPage.verifyOpenAccountLinkNotVisible();
+        // 2. REGISTER USER
+        await registerPage.openRegisterPage();
+        await registerPage.registerUser(dataSet);
+        expect(await registerPage.getSuccessMessage()).toContain('Welcome');
 
-    // =========================
-    // 2. REGISTER USER
-    // =========================
-    await registerPage.openRegisterPage();
-    await registerPage.registerUser(dataSet);
+        // 3. OPEN NEW ACCOUNT
+        await openNewAccountPage.navigateToOpenNewAccountPage();
+        await openNewAccountPage.validateAccountTypeDropdownOptions();
+        await openNewAccountPage.validateFromAccountDropdownIsPopulated();
+        await openNewAccountPage.createNewAccount(dataSet.accountType);
+        await openNewAccountPage.verifyAccountCreatedSuccessfully();
 
-    const successMessage = await registerPage.getSuccessMessage();
-    expect(successMessage).toContain('Welcome');
+        // 4. CAPTURE & GUARD ACCOUNT ID
+        const newAccountId = await openNewAccountPage.getNewAccountId();
+        if (newAccountId == null) throw new Error('New account ID is null or undefined');
+        expect(newAccountId).toMatch(/^\d+$/);
 
-    // =========================
-    // 3. OPEN NEW ACCOUNT
-    // =========================
-    await openNewAccountPage.navigateToOpenNewAccountPage();
+        // 5. UI VERIFICATION
+        await accountOverviewPage.navigateToAccountsOverview();
+        await accountOverviewPage.verifyAccountPresent(newAccountId);
 
-    await openNewAccountPage.validateAccountTypeDropdownOptions();
-    await openNewAccountPage.validateFromAccountDropdownIsPopulated();
+        // 6. API CALL
+        const response = await accountsAPI.getAccounts(newAccountId);
+        expect(response.status()).toBe(200);
 
-    // Choose SAVINGS / CHECKING dynamically from dataset
-    await openNewAccountPage.createNewAccount(dataSet.accountType);
+        // 7. API ASSERTIONS
+        const responseBody = await response.json();
+        expect(responseBody.id).toBe(Number(newAccountId));
+        expect(responseBody.customerId).toBeDefined();
+        expect(responseBody.type).toBe(dataSet.accountType);
+        expect(responseBody.balance).toBeDefined();
 
-    await openNewAccountPage.verifyAccountCreatedSuccessfully();
-
-    // =========================
-    // 4. CAPTURE ACCOUNT ID
-    // =========================
-    const newAccountId = await openNewAccountPage.getNewAccountId();
-
-    expect(newAccountId).toBeTruthy();
-    expect(newAccountId).toMatch(/^\d+$/);
-
-    console.log("Created Account ID:", newAccountId);
-
-    // =========================
-    // 5. VERIFY IN UI (ACCOUNT OVERVIEW)
-    // =========================
-    await accountOverviewPage.navigateToAccountsOverview();
-    // newAccountId can be string | null, ensure it's a string before passing to the page method
-    if (newAccountId == null) throw new Error('New account ID is null or undefined');
-    await accountOverviewPage.verifyAccountPresent(newAccountId);
-
-    // =========================
-    // 6. API VALIDATION USING SAME ACCOUNT ID
-    // =========================
-    const response = await accountsAPI.getAccounts(newAccountId);
-
-    expect(response.status()).toBe(200);
-
-    const responseBody = await response.json();
-
-    console.log("API Response:", responseBody);
-
-    // =========================
-    // 7. API ASSERTIONS
-    // =========================
-    expect(responseBody).toBeDefined();
-    expect(responseBody.id).toBe(Number(newAccountId));
-    expect(responseBody.customerId).toBeDefined();
-    expect(responseBody.type).toBe(dataSet.accountType);
-    expect(responseBody.balance).toBeDefined();
-
-  });
+    });
 
 }

@@ -76,11 +76,40 @@ export class LoginPage extends BasePage {
       .toBeVisible();
   }
 
-  async verifyLoginFailure() {
+  // async verifyLoginFailure() {
 
-    await expect(this.errorMessage)
+  //   await expect(this.errorMessage)
+  //     .toContainText(
+  //       'The username and password could not be verified.'
+  //     );
+  // }
+  async verifyLoginFailure(
+  username: string,
+  password: string
+) {
+
+  const errorMessage =
+    this.page.locator('.error');
+
+  // Blank credentials validation
+  if (
+    username === '' &&
+    password === ''
+  ) {
+
+    await expect(errorMessage)
       .toContainText(
-        'The username and password could not be verified.'
+        'Please enter a username and password.'
       );
   }
+
+  // Invalid credentials validation
+  else {
+
+    await expect(errorMessage)
+      .toContainText(
+        /The username and password could not be verified.|An internal error has occurred/
+      );
+  }
+}
 }

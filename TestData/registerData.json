@@ -1,6 +1,6 @@
 [
   {
-    "firstName": "John",
+    "firstName": "Neeshant",
     "lastName": "Doe",
     "address": "New York Street",
     "city": "New York",
@@ -8,7 +8,7 @@
     "zipCode": "10001",
     "phone": "1234567890",
     "ssn": "12345",
-    "username": "jojo_123",
+    "username": "Neeshant_89",
     "password": "Test@123",
     "confirmPassword": "Test@123",
     "accountType": "SAVINGS",
@@ -16,7 +16,7 @@
   },
 
   {
-    "firstName": "Mark",
+    "firstName": "Kasturi",
     "lastName": "Smith",
     "address": "California Street",
     "city": "LA",
@@ -24,7 +24,7 @@
     "zipCode": "90001",
     "phone": "9999999999",
     "ssn": "77777",
-    "username": "marks_6978",
+    "username": "Kasturi_90",
     "password": "Test@123",
     "confirmPassword": "Test@123",
     "accountType": "CHECKING",
@@ -40,7 +40,7 @@
     "zipCode": "90001",
     "phone": "9999999999",
     "ssn": "77777",
-    "username": "raghav_9078",
+    "username": "raghav_105",
     "password": "Test@123",
     "confirmPassword": "Wrong@123",
     "accountType": "SAVINGS",

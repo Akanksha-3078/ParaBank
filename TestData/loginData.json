@@ -2,12 +2,24 @@
   {
     "username": "invaliduser_899679",
     "password": "wrongpass",
-    "expected": "faliure"
+    "expected": "failure"
+  },
+  {
+    "username": "Akanksha_3078",
+    "password": "123",
+    "expected": "success"
+    
   },
   {
     "username": "momos789",
-    "password": "Test@123",
-    "expected": "success"
+    "password": "890",
+    "expected": "failure"
+    
+  },
+  {
+    "username": "",
+    "password": "",
+    "expected": "failure"
     
   }
 ]

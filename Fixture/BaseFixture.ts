@@ -12,6 +12,9 @@ export const test = baseTest.extend<TestData>({
 
         await use({
 
+            
+
+
             url: 'https://parabank.parasoft.com/parabank'
 
         });
