@@ -1,9 +1,0 @@
-[
-  {
-    instancePath: '',
-    schemaPath: '#/type',
-    keyword: 'type',
-    params: { type: 'array' },
-    message: 'must be array'
-  }
-]

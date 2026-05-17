@@ -19,6 +19,7 @@ test.describe('Registration Module', () => {
     const registerPage = new RegisterPage(page);
 
     await page.goto(data.url);
+     //await page.goto(`${data.url}`);
 
     await registerPage.openRegisterPage();
 
@@ -114,9 +115,11 @@ for (const data of loginData) {
     const loginPage= new LoginPage(page);
     const accountOverviewPage = new AccountOverviewPage(page);
 
-    await page.goto(`${data.url}/index.htm`);
+    //await page.goto(`${data.url}/index.htm`);
+    await page.goto(data.url);
 
     await loginPage.verifyOpenAccountLinkNotVisible();
+     //await page.waitForLoadState('networkidle');
     await registerPage.openRegisterPage();
     const uniqueUsername = generateUsername(dataSet.username, browserName);
     const userData = { ...dataSet,

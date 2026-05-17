@@ -1,3 +1,0 @@
-[2026-05-17T03:56:05.565Z] Login attempted with username: invaliduser_899679
-[2026-05-17T03:56:05.755Z] Screenshot captured: screenshots/login-failure-invaliduser_899679-2026-05-17T03-56-05-568Z.png
-[2026-05-17T03:56:05.771Z] Login failure validated for username: invaliduser_899679

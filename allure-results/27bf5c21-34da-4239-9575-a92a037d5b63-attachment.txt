@@ -1,0 +1,2 @@
+{ id: 18450, customerId: 15209, type: 'CHECKING', balance: -1600 }
+{"id":34323,"customerId":15209,"type":"CHECKING","balance":0}
