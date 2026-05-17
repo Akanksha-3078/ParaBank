@@ -1,3 +1,0 @@
-[2026-05-17T05:12:00.931Z] Login attempted with username: Akanksha_30
-[2026-05-17T05:12:01.124Z] Screenshot captured: screenshots/login-failure-Akanksha_30-2026-05-17T05-12-00-931Z.png
-[2026-05-17T05:12:01.139Z] Login failure validated for username: Akanksha_30
