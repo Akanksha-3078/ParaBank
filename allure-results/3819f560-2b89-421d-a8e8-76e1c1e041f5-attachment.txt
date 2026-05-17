@@ -1,0 +1,3 @@
+51528
+[2026-05-17T21:24:33.282Z] User is created successfully with username ty67__chromium and new AccountID is 51528
+[2026-05-17T21:24:33.398Z] Screenshot captured: screenshots/regression-failure-ty67_-2026-05-17T21-24-33-365Z.png
