@@ -1,15 +1,15 @@
 [{
-    "testName": "Valid Customer",
-    "customerId": 13677,
+    "testName": "(TC-API-01)",
+    "customerId": 16008,
     "expectedStatus": 200
   },
   {
-    "testName": "Invalid Customer",
+    "testName": "(TC-NEG-API-01)",
     "customerId": 999999,
     "expectedStatus": 400
   },
   {
-    "testName": "Non Existing Customer",
+    "testName": "(TC-API-06)",
     "customerId": 123456,
     "expectedStatus": 400
   }

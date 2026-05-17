@@ -1,16 +1,16 @@
 [
   {
     "firstName": "Ankit",
-    "lastName": "Doe",
-    "address": "New York Street",
-    "city": "New York",
-    "state": "NY",
-    "zipCode": "10001",
-    "phone": "1234567890",
-    "ssn": "12345",
-    "username": "khana_56",
-    "password": "Test@123",
-    "confirmPassword": "Test@123",
+    "lastName": "Yadav",
+    "address": "Rabindara Srani_294",
+    "city": "NewYork_158",
+    "state": "NY_64",
+    "zipCode": "10001_847",
+    "phone": "1234567890_392",
+    "ssn": "12345_761",
+    "username": "yyuoyu",
+    "password": "Test@123_245",
+    "confirmPassword": "Test@123_245",
     "accountType": "SAVINGS",
     "expected": "success"
   }

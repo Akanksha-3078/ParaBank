@@ -12,11 +12,11 @@ export const test = baseTest.extend<TestData>({
 
         await use({
 
-            //url: 'http://localhost:9090/parabank/'
+            url: 'http://localhost:9090/parabank/'
 
 
 
-            url: 'https://parabank.parasoft.com/parabank/'
+           //url: 'https://parabank.parasoft.com/parabank/'
 
         });
 

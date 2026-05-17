@@ -72,6 +72,25 @@ export class OpenNewAccountPage extends BasePage {
 
     await expect(this.newAccountId).toBeVisible();
   }
+  // async getNewAccountId(): Promise<string> {
+
+  //   await expect(this.newAccountId).toBeVisible();
+
+  //   const accountId = await this.newAccountId.textContent();
+
+  //   if (!accountId) {
+
+  //     throw new Error(
+
+  //       'New Account ID is null or empty'
+
+  //     );
+
+  //   }
+
+  //   return accountId.trim();
+
+  // }
 
   async getNewAccountId() {
     return await this.newAccountId.textContent();

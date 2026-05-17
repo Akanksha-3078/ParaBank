@@ -14,7 +14,7 @@ import { TestUtil } from '../Utility/helper';
 
 test.describe('Registration Module', () => {
 
-  test('@negative @ui Verify mandatory field validation with no data', async ({ page, data }) => {
+  test('@negative @ui (TC-AC-UI-02, TC-NEG-01) Verify mandatory field validation with no data', async ({ page, data }) => {
 
     const registerPage = new RegisterPage(page);
 
@@ -33,7 +33,7 @@ test.describe('Registration Module', () => {
   });
 
 
-  test('@negative @ui Verify user cannot register with existing username', async ({ page, data }) => {
+  test('@negative @ui (TC-AC-UI-03, TC-NEG-02 ) Verify user cannot register with existing username', async ({ page, data }) => {
 
     const registerPage = new RegisterPage(page);
     const homePage = new HomePage(page);
@@ -64,7 +64,7 @@ test.describe('Registration Module', () => {
 
 
 for (const dataSet of loginData) {
-  test(`@smoke @ui Validate login with username: ${dataSet.testName}`,async ({ page, context, data}) => {
+  test(`@smoke @ui @flaky Validate login with username: ${dataSet.testName}`,async ({ page, context, data}) => {
       await context.clearCookies();
       const loginPage = new LoginPage(page);
       const homePage = new HomePage(page);
@@ -101,6 +101,7 @@ for (const dataSet of loginData) {
         await expect(loginPage.passwordInput).toBeVisible();
 
         TestUtil.logMessage( `Login failure validated for username: ${dataSet.username}`);
+         await TestUtil.captureScreenshot(page,`login-failure-${dataSet.username || 'empty-user'}`);
 
       } 
     }
@@ -111,7 +112,7 @@ for (const dataSet of loginData) {
 
   for (const dataSet of registerData) {
 
-  test(`@regression @ui Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data, browserName }) => {
+  test(`@regression @ui (TC-AC-UI-01, TC-NEG-03 TO 10 ) Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data, browserName }) => {
 
     const registerPage = new RegisterPage(page);
     const openNewAccountPage = new OpenNewAccountPage(page);
@@ -147,6 +148,7 @@ for (const dataSet of loginData) {
       await openNewAccountPage.verifyAccountCreatedSuccessfully();      
       
       const newAccountId = (await openNewAccountPage.getNewAccountId())!;
+      console.log(newAccountId);
        TestUtil.logMessage(`User is created successfully with username ${uniqueUsername} and new AccountID is ${newAccountId}`);
 
         expect(newAccountId).not.toBeNull();
@@ -162,6 +164,7 @@ for (const dataSet of loginData) {
 
       await expect(page.locator(registerPage.locators.passwordMismatchError)).toHaveText('Passwords did not match.');
     }
+     await TestUtil.captureScreenshot(page,`regression-failure-${dataSet.username || 'empty-user'}`);
   });
 }
 

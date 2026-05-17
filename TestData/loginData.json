@@ -1,26 +1,26 @@
 [
   {
-    "testName": "UserNotPresent",
+    "testName": "(TC-LG-02) UserNotPresent",
     "username": "invaliduser_899679",
     "password": "wrongpass",
-    "expected": "success"
+    "expected": "failure"
   },
   {
-    "testName": "UserPresent",
-    "username": "Akank_30",
+    "testName": "(TC-LG-01) UserPresent",
+    "username": "Rick_30",
     "password": "123",
     "expected": "success"
     
   },
   {
-    "testName": "IncorrectPassword",
-    "username": "Akank_30",
+    "testName": "(TC-LG-03) IncorrectPassword",
+    "username": "Rick_30",
     "password": "890",
-    "expected": "success"
+    "expected": "failure"
     
   },
   {
-    "testName": "BlankUser",
+    "testName": "(TC-LG-03) BlankUser",
     "username": "",
     "password": "",
     "expected": "failure"
