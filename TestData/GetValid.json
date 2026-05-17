@@ -1,6 +1,6 @@
 [{
     "testName": "Valid Customer",
-    "customerId": 18450,
+    "customerId": 13677,
     "expectedStatus": 200
   },
   {

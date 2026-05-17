@@ -14,7 +14,7 @@ import { TestUtil } from '../Utility/helper';
 
 test.describe('Registration Module', () => {
 
-  test('Verify mandatory field validation with no data', async ({ page, data }) => {
+  test('@negative @ui Verify mandatory field validation with no data', async ({ page, data }) => {
 
     const registerPage = new RegisterPage(page);
 
@@ -33,7 +33,7 @@ test.describe('Registration Module', () => {
   });
 
 
-  test('Verify user cannot register with existing username', async ({ page, data }) => {
+  test('@negative @ui Verify user cannot register with existing username', async ({ page, data }) => {
 
     const registerPage = new RegisterPage(page);
     const homePage = new HomePage(page);
@@ -63,41 +63,44 @@ test.describe('Registration Module', () => {
 
 
 
-for (const data of loginData) {
-  test(`Validate login with username: ${data.testName}`,async ({ page, context }) => {
+for (const dataSet of loginData) {
+  test(`@smoke @ui Validate login with username: ${dataSet.testName}`,async ({ page, context, data}) => {
       await context.clearCookies();
       const loginPage = new LoginPage(page);
       const homePage = new HomePage(page);
-      await loginPage.navigate();
+       await page.goto(data.url);
+      //await loginPage.navigate();
 
-      await loginPage.login(data.username,data.password);
-      TestUtil.logMessage(`Login attempted with username: ${data.username}`);
+      await loginPage.login(dataSet.username,dataSet.password);
+      TestUtil.logMessage(`Login attempted with username: ${dataSet.username}`);
 
-      if (data.expected === 'success') {
+      if (dataSet.expected === 'success') {
 
         await loginPage.verifyLoginSuccess();
         await homePage.logout();
       }
       else {
-
-        await TestUtil.captureScreenshot(page,`login-failure-${data.username || 'empty-user'}`);
-        
         const isLoggedIn = await loginPage.isLoggedIn();
-        // Flaky / security issue
+         await TestUtil.captureScreenshot(page,`login-failure-${dataSet.username || 'empty-user'}`);
+        // // Flaky / security issue
+        console.log(isLoggedIn);
         if (isLoggedIn) {
+          //await homePage.logout();
 
-          TestUtil.logMessage( `BUG: User logged in with invalid credentials: ${data.username}` );
+          TestUtil.logMessage( `BUG: User logged in with invalid credentials: ${dataSet.username}` );
+           throw new Error(`Security issue: Invalid login succeeded for user ${dataSet.username}`);
+          
+        //await context.clearCookies();
 
-          throw new Error(`Security issue: Invalid login succeeded for user ${data.username}`);
-
-        }
-        await loginPage.verifyLoginFailure(data.username,data.password);
+       }
+      
+        await loginPage.verifyLoginFailure(dataSet.username,dataSet.password);
 
         await expect(loginPage.usernameInput).toBeVisible();
 
         await expect(loginPage.passwordInput).toBeVisible();
 
-        TestUtil.logMessage( `Login failure validated for username: ${data.username}`);
+        TestUtil.logMessage( `Login failure validated for username: ${dataSet.username}`);
 
       } 
     }
@@ -108,7 +111,7 @@ for (const data of loginData) {
 
   for (const dataSet of registerData) {
 
-  test(`Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data, browserName }) => {
+  test(`@regression @ui Validate ${dataSet.accountType} Account Flow for ${dataSet.username}`, async ({ page, data, browserName }) => {
 
     const registerPage = new RegisterPage(page);
     const openNewAccountPage = new OpenNewAccountPage(page);
@@ -144,6 +147,7 @@ for (const data of loginData) {
       await openNewAccountPage.verifyAccountCreatedSuccessfully();      
       
       const newAccountId = (await openNewAccountPage.getNewAccountId())!;
+       TestUtil.logMessage(`User is created successfully with username ${uniqueUsername} and new AccountID is ${newAccountId}`);
 
         expect(newAccountId).not.toBeNull();
       expect(newAccountId).toMatch(/^\d+$/);

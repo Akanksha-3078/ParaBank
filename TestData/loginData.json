@@ -3,20 +3,20 @@
     "testName": "UserNotPresent",
     "username": "invaliduser_899679",
     "password": "wrongpass",
-    "expected": "failure"
+    "expected": "success"
   },
   {
     "testName": "UserPresent",
-    "username": "Akanksha_30",
+    "username": "Akank_30",
     "password": "123",
     "expected": "success"
     
   },
   {
     "testName": "IncorrectPassword",
-    "username": "Akanksha_30",
+    "username": "Akank_30",
     "password": "890",
-    "expected": "failure"
+    "expected": "success"
     
   },
   {

@@ -5,12 +5,13 @@ import { OpenNewAccountPage } from '../Pages/Openess';
 import { AccountOverviewPage } from '../Pages/AccountOverviwePage';
 import { generateUsername } from '../Utility/generateUser';
 import { LoginPage } from '../Pages/LoginPage';
+import { TestUtil } from '../Utility/helper';
 
 import hybridData from '../TestData/hybrid.json';
 
 for (const dataSet of hybridData) {
 
-    test(`E2E Hybrid Flow - ${dataSet.username} - ${dataSet.accountType}`, async ({ page, data, accountsAPI, browserName }) => {
+    test(`@integration @ai @ui E2E Hybrid Flow - ${dataSet.username} - ${dataSet.accountType}`, async ({ page, data, accountsAPI, browserName }) => {
 
         
         const registerPage = new RegisterPage(page);
@@ -28,7 +29,7 @@ for (const dataSet of hybridData) {
         
         await registerPage.openRegisterPage();
         await registerPage.registerUser(userData);
-        
+        TestUtil.logMessage(`User is registered with username ${uniqueUsername}`);
         expect(await registerPage.getSuccessMessage()).toContain('Welcome');
 
         await openNewAccountPage.navigateToOpenNewAccountPage();
@@ -36,13 +37,16 @@ for (const dataSet of hybridData) {
         await openNewAccountPage.validateFromAccountDropdownIsPopulated();
         await openNewAccountPage.createNewAccount(dataSet.accountType);
         await openNewAccountPage.verifyAccountCreatedSuccessfully();
+       
 
         const newAccountId = await openNewAccountPage.getNewAccountId();
+         TestUtil.logMessage(`Account is created Successfully and AccountId is ${newAccountId}`);
         if (newAccountId == null) throw new Error('New account ID is null or undefined');
         expect(newAccountId).toMatch(/^\d+$/);
 
         await accountOverviewPage.navigateToAccountsOverview();
         await accountOverviewPage.verifyAccountPresent(newAccountId);
+         TestUtil.logMessage(`Iniciation of the API testing`);
 
         const response = await accountsAPI.getAccounts(newAccountId);
         expect(response.status()).toBe(200);

@@ -12,7 +12,7 @@ const ajv = new Ajv();
 
 test.describe('GET Accounts API Validation', () => {
 
-    test('Validate Create Account API using GET response data',
+    test('@regression @api Validate Create Account API using GET response data',
 
     async ({ accountsAPI}) => { const getResponse =await accountsAPI.getAccounts(validData[0].id);
 
@@ -38,7 +38,7 @@ test.describe('GET Accounts API Validation', () => {
 
     for (const data of apiData) {
 
-      test(`Verify ${data.testName}`, async ({accountsAPI}) => {
+      test(`@smoke @api Verify ${data.testName}`, async ({accountsAPI}) => {
         const response = await accountsAPI.getAccounts(data.customerId);
         console.log(await response.text());
         expect(response.status()).toBe(data.expectedStatus);
@@ -46,7 +46,7 @@ test.describe('GET Accounts API Validation', () => {
 
     }
 
-    test('GET accounts with missing or empty customer ID', async ({accountsAPI}) => {
+    test('@negative @api GET accounts with missing or empty customer ID', async ({accountsAPI}) => {
       const response = await accountsAPI.getAccounts('');
       console.log(await response.text());
       expect([400, 404, 405]).toContain(response.status());
@@ -57,7 +57,7 @@ test.describe('GET Accounts API Validation', () => {
 
    for (const data of apiData) {
 
-  test(`Verify schema ${data.testName}`, async ({ accountsAPI }) => {
+  test(`@schema @api Verify schema ${data.testName}`, async ({ accountsAPI }) => {
 
     const response = await accountsAPI.getAccounts(data.customerId);
     expect(response.status()).toBe(data.expectedStatus);

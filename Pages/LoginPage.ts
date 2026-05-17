@@ -43,9 +43,21 @@ export class LoginPage extends BasePage {
     await expect(this.logoutLink).toBeVisible();
   }
 
-  async isLoggedIn(){
-    return await this.logoutLink.isVisible({ timeout: 0 });
-  }
+  // async isLoggedIn(){
+  //   return await this.logoutLink.isVisible({ timeout: 2000 });
+  // }
+  async isLoggedIn() {
+   return await this.page.locator('text=Log Out').isVisible();
+}
+  
+ 
+//   async isLoggedIn(): Promise<boolean> {
+
+//   return await this.page
+//     .locator('text=Accounts Overview')
+//     .isVisible()
+//     .catch(() => false);
+// }
   
 
   async verifyLoginFailure(username: string,password: string) {
