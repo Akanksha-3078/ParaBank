@@ -6,34 +6,13 @@ export class AccountsAPI extends BaseAPI{
     }
 
     async createAccount(
-
         customerId: number,
-
         newAccountType: number,
-
         fromAccountId: number
 
     ) {
 
-    return await this.RequestContext.post(
-
-        'createAccount',
-
-        {
-
-            params: {
-
-                customerId,
-
-                newAccountType,
-
-                fromAccountId
-
-            }
-
-        }
-
-    );
+    return await this.RequestContext.post('createAccount',{params: {customerId,newAccountType,fromAccountId}});
 
     
 }

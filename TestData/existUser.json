@@ -1,0 +1,13 @@
+{
+  "firstName": "Sanvu",
+  "lastName": "Prasad",
+  "address": "Kolkata",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "zipCode": "700001",
+  "phone": "9876543210",
+  "ssn": "123456",
+  "username": "testuser",
+  "password": "Test@123",
+  "confirmPassword": "Test@123"
+}

@@ -1,0 +1,90 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI.spec.ts >> Registration Module >> Validate SAVINGS Account Flow for raghav_105
+- Location: tests/UI.spec.ts:132:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('text=Register')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Error 1015" [level=1] [ref=e5]
+    - generic [ref=e6]: "Ray ID: 9fcfbe878b9b8eee •"
+    - generic [ref=e7]: 2026-05-17 04:05:31 UTC
+    - heading "You are being rate limited" [level=2] [ref=e8]
+  - generic [ref=e10]:
+    - heading "What happened?" [level=2] [ref=e11]
+    - paragraph [ref=e12]: The owner of this website (parabank.parasoft.com) has banned you temporarily from accessing this website.
+    - paragraph [ref=e13]:
+      - text: Please see
+      - link "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/" [ref=e14] [cursor=pointer]:
+        - /url: https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/
+      - text: for more details.
+  - generic [ref=e16]:
+    - text: Was this page helpful?
+    - button "Yes" [ref=e17] [cursor=pointer]
+    - button "No" [ref=e18] [cursor=pointer]
+  - paragraph [ref=e20]:
+    - generic [ref=e21]:
+      - text: "Cloudflare Ray ID:"
+      - strong [ref=e22]: 9fcfbe878b9b8eee
+    - text: •
+    - generic [ref=e23]:
+      - text: "Your IP:"
+      - button "Click to reveal" [ref=e24] [cursor=pointer]
+      - text: •
+    - generic [ref=e25]:
+      - text: Performance & security by
+      - link "Cloudflare" [ref=e26] [cursor=pointer]:
+        - /url: https://www.cloudflare.com/5xx-error-landing
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from '@playwright/test';
+  2  | 
+  3  | export class BasePage {
+  4  |   protected page: Page;
+  5  | 
+  6  |   constructor(page: Page) {
+  7  |     this.page = page;
+  8  |   }
+  9  | 
+  10 |   async navigate(path: string = '') {
+  11 |     await this.page.goto(path);
+  12 |   }
+  13 | 
+  14 |   async click(locator: string) {
+> 15 |     await this.page.locator(locator).click();
+     |                                      ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  16 |   }
+  17 | 
+  18 |   async fill(locator: string, value: string) {
+  19 |     await this.page.locator(locator).fill(value);
+  20 |   }
+  21 | 
+  22 |   async getText(locator: string) {
+  23 |     return await this.page.locator(locator).textContent();
+  24 |   }
+  25 | }
+```

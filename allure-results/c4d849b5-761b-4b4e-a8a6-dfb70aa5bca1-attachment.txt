@@ -1,0 +1,2 @@
+[2026-05-16T16:40:22.255Z] Login attempted with username: Akanksha_3090
+[2026-05-16T16:40:22.477Z] Screenshot captured: screenshots/login-failure-Akanksha_3090-2026-05-16T16-40-22-256Z.png

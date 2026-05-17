@@ -1,22 +1,26 @@
 [
   {
+    "testName": "UserNotPresent",
     "username": "invaliduser_899679",
     "password": "wrongpass",
     "expected": "failure"
   },
   {
-    "username": "Akanksha_3078",
+    "testName": "UserPresent",
+    "username": "Akanksha_30",
     "password": "123",
     "expected": "success"
     
   },
   {
-    "username": "momos789",
+    "testName": "IncorrectPassword",
+    "username": "Akanksha_30",
     "password": "890",
     "expected": "failure"
     
   },
   {
+    "testName": "BlankUser",
     "username": "",
     "password": "",
     "expected": "failure"

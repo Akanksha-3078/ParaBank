@@ -5,36 +5,22 @@ export class LoginPage extends BasePage {
 
   readonly usernameInput: Locator;
   readonly passwordInput: Locator;
-
   readonly loginButton: Locator;
-
   readonly errorMessage: Locator;
-
   readonly logoutLink: Locator;
+  readonly openAccountLink: Locator;
 
   constructor(page: Page) {
 
     super(page);
+    
+    this.loginButton = page.getByRole('button', { name: 'Log In' });
+    this.logoutLink = page.getByRole('link', { name: 'Log Out' });
+    this.errorMessage = page.locator('.error');
+    this.usernameInput = page.locator('input[name="username"]');
+    this.passwordInput = page.locator('input[name="password"]');
+    this.openAccountLink = page.locator('a[href*="openaccount"]');
 
-    this.usernameInput = page.locator(
-      'input[name="username"]'
-    );
-
-    this.passwordInput = page.locator(
-      'input[name="password"]'
-    );
-
-    this.loginButton = page.locator(
-      'input[value="Log In"]'
-    );
-
-    this.errorMessage = page.locator(
-      '.error'
-    );
-
-    this.logoutLink = page.locator(
-      'text=Log Out'
-    );
   }
 
   async navigate(path: string = 'https://parabank.parasoft.com/parabank/index.htm') {
@@ -42,74 +28,34 @@ export class LoginPage extends BasePage {
   }
 
   async login(username: string, password: string) {
-
-    await this.fill(
-      'input[name="username"]',
-      username
-    );
-
-    await this.fill(
-      'input[name="password"]',
-      password
-    );
-
-    await this.click(
-      'input[value="Log In"]'
-    );
-  }
-  async verifyOpenAccountLinkNotVisible() {
-
-  const linkCount =
-    await this.page
-      .locator('a[href*="openaccount"]')
-      .count();
-
-  expect(linkCount).toBe(0);
+    await this.usernameInput.fill(username);   
+    await this.passwordInput.fill(password);   
+    await this.loginButton.click();            
 }
 
+    
+  async verifyOpenAccountLinkNotVisible() {
+    await expect(this.openAccountLink).toHaveCount(0);
+  }
+
   async verifyLoginSuccess() {
-
-    await expect(this.page)
-      .toHaveURL(/overview.htm/);
-
-    await expect(this.logoutLink)
-      .toBeVisible();
+    await expect(this.page).toHaveURL(/overview.htm/);
+    await expect(this.logoutLink).toBeVisible();
   }
 
-  // async verifyLoginFailure() {
-
-  //   await expect(this.errorMessage)
-  //     .toContainText(
-  //       'The username and password could not be verified.'
-  //     );
-  // }
-  async verifyLoginFailure(
-  username: string,
-  password: string
-) {
-
-  const errorMessage =
-    this.page.locator('.error');
-
-  // Blank credentials validation
-  if (
-    username === '' &&
-    password === ''
-  ) {
-
-    await expect(errorMessage)
-      .toContainText(
-        'Please enter a username and password.'
-      );
+  async isLoggedIn(){
+    return await this.logoutLink.isVisible({ timeout: 0 });
   }
+  
 
-  // Invalid credentials validation
+  async verifyLoginFailure(username: string,password: string) {
+
+  const errorMessage = this.page.locator('.error');
+  if (username === '' && password === '') {
+    await expect(errorMessage).toContainText('Please enter a username and password.');
+  }
   else {
-
-    await expect(errorMessage)
-      .toContainText(
-        /The username and password could not be verified.|An internal error has occurred/
-      );
+   await expect(errorMessage).toContainText(/The username and password could not be verified.|An internal error has occurred and has been logged./);
   }
 }
 }

@@ -14,8 +14,7 @@ export const test =
 
     apiContext: async ({}, use) => {
 
-        const apiContext =
-            await request.newContext({
+        const apiContext = await request.newContext({
 
             baseURL:
                 'https://parabank.parasoft.com/parabank/services/bank/',
@@ -44,3 +43,4 @@ export const test =
 });
 
 export const expect = test.expect;
+

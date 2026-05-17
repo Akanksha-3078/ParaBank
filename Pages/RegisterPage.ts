@@ -7,7 +7,7 @@ export class RegisterPage extends BasePage{
     super(page);
   }
 
-  locators = {
+  readonly locators = {
     registerLink: 'text=Register',
 
     firstName: 'input[id="customer.firstName"]',
@@ -23,19 +23,17 @@ export class RegisterPage extends BasePage{
     confirmPassword: 'input[id="repeatedPassword"]',
 
     registerButton: 'input[value="Register"]',
-    passwordMismatchError:
-     'span#repeatedPassword\\.errors',
+    passwordMismatchError: 'span#repeatedPassword\\.errors',
 
     pageTitle: 'h1.title',
-    successMessage: 'h1.title'
+    //successMessage: 'h1.title'
   };
 
   async openRegisterPage() {
     await this.click(this.locators.registerLink);
 
-    // Assertion
-    await expect(this.page.locator(this.locators.pageTitle))
-      .toHaveText('Signing up is easy!');
+  
+    await expect(this.page.locator(this.locators.pageTitle)).toHaveText('Signing up is easy!');
   }
 
   async registerUser(data: any) {
@@ -50,12 +48,10 @@ export class RegisterPage extends BasePage{
     await this.fill(this.locators.username, data.username);
     await this.fill(this.locators.password, data.password);
     await this.fill(this.locators.confirmPassword, data.confirmPassword);
-
     await this.click(this.locators.registerButton);
   }
 
   async getSuccessMessage() {
-    return await this.getText(this.locators.successMessage);
+    return await this.getText(this.locators.pageTitle);
   }
 }
-

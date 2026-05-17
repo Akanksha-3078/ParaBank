@@ -1,70 +1,32 @@
-import { Page, expect } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
+import { BasePage } from './BasePage';
 
-export class AccountOverviewPage {
+export class AccountOverviewPage extends BasePage {
 
-  readonly page: Page;
+    constructor(page: Page) {
+        super(page);
+    }
+    readonly accountsOverviewLink = this.page.getByRole('link', { name: 'Accounts Overview' });
+    readonly accountsTable = this.page.locator('#accountTable');
+    readonly accountIds = this.page.locator('#accountTable').getByRole('link');
 
-  locators = {
+    
+    async navigateToAccountsOverview() {
+        await this.accountsOverviewLink.click();                    
+        await expect(this.accountsTable).toBeVisible();            
+    }
 
-    accountsOverviewLink:
-      'a[href*="overview.htm"]',
+    
+    async getAllAccountIds(): Promise<string[]> {
+        await expect(this.accountIds).not.toHaveCount(0);           
+        const accounts = await this.accountIds.allTextContents();
+        return accounts.map(account => account.trim());
+    }
 
-    accountsTable:
-      '#accountTable',
-
-    accountIds:
-      '#accountTable tbody tr td a'
-  };
-
-  constructor(page: Page) {
-
-    this.page = page;
-  }
-
-  // =====================================================
-  // NAVIGATE TO ACCOUNT OVERVIEW
-  // =====================================================
-
-  async navigateToAccountsOverview() {
-
-    await this.page.click(
-      this.locators.accountsOverviewLink
-    );
-
-    await expect(
-      this.page.locator(this.locators.accountsTable)
-    ).toBeVisible();
-  }
-
-  // =====================================================
-  // GET ALL ACCOUNT IDS
-  // =====================================================
-
-  async getAllAccountIds() {
-
-    await this.page.waitForTimeout(2000);
-
-    const accounts = await this.page
-      .locator(this.locators.accountIds)
-      .allTextContents();
-
-    return accounts.map(account =>
-      account.trim()
-    );
-  }
-
-  // =====================================================
-  // VERIFY ACCOUNT PRESENT
-  // =====================================================
-
-  async verifyAccountPresent(accountId: string) {
-
-    const allAccounts =
-      await this.getAllAccountIds();
-
-    console.log('Accounts Found:', allAccounts);
-
-    expect(allAccounts)
-      .toContain(accountId);
-  }
+    
+    async verifyAccountPresent(accountId: string) {
+        await expect(this.accountIds.filter({                       
+            hasText: accountId
+        })).toBeVisible();
+    }
 }
