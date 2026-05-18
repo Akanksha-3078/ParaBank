@@ -1,0 +1,3 @@
+83385
+[2026-05-18T06:55:56.478Z] User is created successfully with username wuajt2_webkit and new AccountID is 83385
+[2026-05-18T06:55:56.637Z] Screenshot captured: screenshots/regression-failure-Occur_-2026-05-18T06-55-56-557Z.png

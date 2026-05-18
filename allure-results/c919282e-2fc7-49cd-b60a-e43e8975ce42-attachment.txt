@@ -1,0 +1,4 @@
+ACCOUNT ID: 82164
+82164
+{ id: 82164, customerId: 52283, type: 'SAVINGS', balance: 100 }
+[2026-05-18T06:55:44.323Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T06-55-44-223Z.png

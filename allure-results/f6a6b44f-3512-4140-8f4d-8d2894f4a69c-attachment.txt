@@ -1,0 +1,5 @@
+[2026-05-18T06:52:03.613Z] Login attempted with username: 
+[2026-05-18T06:52:03.727Z] Screenshot captured: screenshots/login-failure-empty-user-2026-05-18T06-52-03-633Z.png
+false
+[2026-05-18T06:52:03.762Z] Login failure validated for username: 
+[2026-05-18T06:52:03.804Z] Screenshot captured: screenshots/login-failure-empty-user-2026-05-18T06-52-03-762Z.png

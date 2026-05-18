@@ -1,0 +1,5 @@
+[2026-05-18T06:55:45.692Z] Login attempted with username: Sanvi_30
+[2026-05-18T06:55:45.904Z] Screenshot captured: screenshots/login-failure-Sanvi_30-2026-05-18T06-55-45-824Z.png
+false
+[2026-05-18T06:55:45.948Z] Login failure validated for username: Sanvi_30
+[2026-05-18T06:55:45.991Z] Screenshot captured: screenshots/login-failure-Sanvi_30-2026-05-18T06-55-45-948Z.png

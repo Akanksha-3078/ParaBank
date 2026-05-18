@@ -1,0 +1,1 @@
+{"id":20226,"customerId":14654,"type":"CHECKING","balance":-500.00}

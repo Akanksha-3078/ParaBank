@@ -1,0 +1,3 @@
+81165
+[2026-05-18T06:52:23.593Z] User is created successfully with username tsv55n_webkit and new AccountID is 81165
+[2026-05-18T06:52:23.730Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-52-23-673Z.png

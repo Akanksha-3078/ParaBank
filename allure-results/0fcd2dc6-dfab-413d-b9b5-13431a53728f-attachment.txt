@@ -1,0 +1,1 @@
+[2026-05-18T06:55:53.286Z] Screenshot captured: screenshots/madatoryField-failure-|| 'empty-user'}-2026-05-18T06-55-53-113Z.png

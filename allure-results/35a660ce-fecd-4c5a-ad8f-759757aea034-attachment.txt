@@ -1,0 +1,3 @@
+80499
+[2026-05-18T06:52:15.748Z] User is created successfully with username 45v3m1_firefox and new AccountID is 80499
+[2026-05-18T06:52:15.954Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-52-15-904Z.png

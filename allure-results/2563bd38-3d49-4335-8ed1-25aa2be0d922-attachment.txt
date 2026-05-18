@@ -1,0 +1,4 @@
+ACCOUNT ID: 83052
+83052
+{ id: 83052, customerId: 52727, type: 'SAVINGS', balance: 100 }
+[2026-05-18T06:55:54.377Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T06-55-54-252Z.png

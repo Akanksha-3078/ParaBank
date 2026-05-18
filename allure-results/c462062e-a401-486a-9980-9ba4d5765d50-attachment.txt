@@ -1,0 +1,3 @@
+81942
+[2026-05-18T06:55:35.751Z] User is created successfully with username zn9pbb_chromium and new AccountID is 81942
+[2026-05-18T06:55:35.866Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-55-35-823Z.png

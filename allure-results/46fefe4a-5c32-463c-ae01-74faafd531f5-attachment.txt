@@ -1,0 +1,3 @@
+78279
+[2026-05-18T06:50:45.153Z] User is created successfully with username 2segfg_chromium and new AccountID is 78279
+[2026-05-18T06:50:45.286Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-50-45-238Z.png

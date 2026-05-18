@@ -4067,3 +4067,299 @@
 {"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:43:54.859Z"}
 {"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:43:54.859Z"}
 {"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:43:55.347Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:50:40.148Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:40.150Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:50:40.151Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:50:40.152Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:50:40.153Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:50:40.153Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:50:40.171Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:50:40.173Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:41.387Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:50:41.387Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:50:41.388Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-300}","timestamp":"2026-05-18T06:50:41.393Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:50:41.398Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:50:41.398Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:50:41.398Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:50:41.410Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:50:41.410Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:50:41.412Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:50:41.413Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:50:41.522Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:41.533Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:50:41.534Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:50:41.837Z"}
+{"level":"info","message":"POST Response Body: {\"id\":27774,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:50:41.839Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:50:41.843Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:50:41.841Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:50:41.874Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:50:41.890Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:50:41.890Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:50:41.908Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:50:41.987Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:50:42.393Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:50:42.985Z"}
+{"level":"info","message":"User is registered with username a72bx7_chromium","timestamp":"2026-05-18T06:50:43.620Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 77835","timestamp":"2026-05-18T06:50:43.950Z"}
+{"level":"info","message":"Iniciation of the API testing with 77835","timestamp":"2026-05-18T06:50:44.064Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for a72bx7_chromium","timestamp":"2026-05-18T06:50:44.154Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:50:45.682Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:50:45.683Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:50:45.805Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:50:45.806Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:45.857Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:50:45.859Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:50:45.864Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:50:45.865Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:50:46.482Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:50:46.506Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:50:46.506Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:46.514Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:50:46.525Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:50:46.525Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:50:46.719Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-400}","timestamp":"2026-05-18T06:50:46.721Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:50:46.723Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:50:46.723Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:50:46.723Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:50:47.215Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:50:47.230Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:50:47.230Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:50:48.010Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:50:48.022Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:50:48.034Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:50:48.034Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:50:48.048Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:50:48.141Z"}
+{"level":"info","message":"POST Response Body: {\"id\":27885,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:50:48.142Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:50:48.144Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:50:48.276Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:50:48.534Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:50:50.414Z"}
+{"level":"info","message":"User is registered with username o9xak8_webkit","timestamp":"2026-05-18T06:50:51.360Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 78612","timestamp":"2026-05-18T06:50:51.786Z"}
+{"level":"info","message":"Iniciation of the API testing with 78612","timestamp":"2026-05-18T06:50:51.898Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for o9xak8_webkit","timestamp":"2026-05-18T06:50:52.016Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:51:58.917Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:51:58.919Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:51:58.920Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:51:58.922Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:51:58.921Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:51:58.923Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:51:58.929Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:51:58.931Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:52:00.435Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:52:00.456Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:52:00.456Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:00.777Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:52:00.796Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:52:00.796Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:52:00.910Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:00.935Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:52:00.935Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:52:01.261Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:52:01.288Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:52:01.308Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:52:01.308Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:01.389Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:52:01.702Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:52:01.934Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:01.934Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-500}","timestamp":"2026-05-18T06:52:01.937Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:52:01.939Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:52:01.939Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:52:01.940Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:52:01.974Z"}
+{"level":"info","message":"User is registered with username 46725i_chromium","timestamp":"2026-05-18T06:52:02.386Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 79167","timestamp":"2026-05-18T06:52:02.535Z"}
+{"level":"info","message":"Iniciation of the API testing with 79167","timestamp":"2026-05-18T06:52:02.600Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for 46725i_chromium","timestamp":"2026-05-18T06:52:02.637Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:52:03.305Z"}
+{"level":"info","message":"POST Response Body: {\"id\":27996,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:52:03.309Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:52:03.312Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:52:04.835Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:52:04.837Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:52:04.964Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:52:04.965Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:52:04.965Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:52:04.966Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:04.969Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:52:04.971Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:52:05.481Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-600}","timestamp":"2026-05-18T06:52:05.486Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:52:05.490Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:52:05.490Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:52:05.490Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:52:05.598Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:52:05.601Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:52:05.611Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:52:05.611Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:52:05.614Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:52:05.614Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:05.622Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:05.634Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:52:05.634Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:52:05.954Z"}
+{"level":"info","message":"POST Response Body: {\"id\":28107,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:52:05.954Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:52:05.955Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:52:05.971Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:52:05.971Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:52:07.459Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:07.463Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:52:07.463Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:52:07.498Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:08.567Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:52:09.942Z"}
+{"level":"info","message":"User is registered with username yjjafo_firefox","timestamp":"2026-05-18T06:52:11.585Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 80055","timestamp":"2026-05-18T06:52:12.074Z"}
+{"level":"info","message":"Iniciation of the API testing with 80055","timestamp":"2026-05-18T06:52:12.437Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for yjjafo_firefox","timestamp":"2026-05-18T06:52:12.476Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:52:16.238Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:52:16.246Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:52:16.578Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:52:16.579Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:16.654Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:52:16.655Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:52:16.800Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:52:16.801Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:52:17.105Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-700}","timestamp":"2026-05-18T06:52:17.110Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:52:17.115Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:52:17.115Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:52:17.115Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:52:17.212Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:52:17.227Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:52:17.227Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:17.565Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:52:17.575Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:52:17.575Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:52:17.584Z"}
+{"level":"info","message":"POST Response Body: {\"id\":28218,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:52:17.585Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:52:17.585Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:52:17.597Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:52:17.599Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:52:17.599Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:52:17.606Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:52:17.606Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:52:17.689Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:52:18.036Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:52:18.051Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:18.058Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:52:19.205Z"}
+{"level":"info","message":"User is registered with username tbm5hs_webkit","timestamp":"2026-05-18T06:52:19.819Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 80721","timestamp":"2026-05-18T06:52:20.104Z"}
+{"level":"info","message":"Iniciation of the API testing with 80721","timestamp":"2026-05-18T06:52:20.224Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for tbm5hs_webkit","timestamp":"2026-05-18T06:52:20.259Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:52:20.588Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:55:30.544Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:30.549Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:30.563Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:55:30.563Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:30.565Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:30.565Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:55:30.565Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:55:30.567Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:31.211Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:55:31.230Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:55:31.230Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:55:32.513Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:55:32.534Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:55:32.534Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:55:32.550Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:32.550Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:32.558Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:32.558Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:55:32.564Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:32.564Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:55:33.018Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:33.020Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:55:33.022Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-800}","timestamp":"2026-05-18T06:55:33.028Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:55:33.035Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:55:33.035Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:55:33.035Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:55:33.059Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:55:33.518Z"}
+{"level":"info","message":"POST Response Body: {\"id\":29661,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:55:33.519Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:55:33.520Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:55:33.545Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:33.562Z"}
+{"level":"info","message":"User is registered with username ll4ohf_chromium","timestamp":"2026-05-18T06:55:34.171Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 81498","timestamp":"2026-05-18T06:55:34.400Z"}
+{"level":"info","message":"Iniciation of the API testing with 81498","timestamp":"2026-05-18T06:55:34.487Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for ll4ohf_chromium","timestamp":"2026-05-18T06:55:34.522Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:55:36.238Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:55:36.237Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:55:36.240Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:36.240Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:36.377Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:36.378Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:55:36.388Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:36.389Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:38.163Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:55:38.170Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:55:38.183Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:55:38.183Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:55:38.186Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:38.186Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:55:38.422Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:38.444Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:38.444Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:55:38.463Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-900}","timestamp":"2026-05-18T06:55:38.466Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:55:38.469Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:55:38.469Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:55:38.469Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:55:38.646Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:55:38.673Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:55:38.697Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:38.697Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:38.902Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:55:38.914Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:55:38.925Z"}
+{"level":"info","message":"POST Response Body: {\"id\":29772,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:55:38.926Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:55:38.927Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:39.448Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:55:41.488Z"}
+{"level":"info","message":"User is registered with username uhu6vo_firefox","timestamp":"2026-05-18T06:55:43.278Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 82164","timestamp":"2026-05-18T06:55:43.910Z"}
+{"level":"info","message":"Iniciation of the API testing with 82164","timestamp":"2026-05-18T06:55:44.183Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for uhu6vo_firefox","timestamp":"2026-05-18T06:55:44.223Z"}
+{"level":"info","message":"Starting API chaining test","timestamp":"2026-05-18T06:55:48.325Z"}
+{"level":"info","message":"Sending GET request for account ID: 20226","timestamp":"2026-05-18T06:55:48.331Z"}
+{"level":"info","message":"Starting test: (TC-API-01)","timestamp":"2026-05-18T06:55:48.581Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:48.582Z"}
+{"level":"info","message":"Starting test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:48.659Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:48.661Z"}
+{"level":"info","message":"Starting test: (TC-API-06)","timestamp":"2026-05-18T06:55:48.697Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:48.698Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-06)","timestamp":"2026-05-18T06:55:49.916Z"}
+{"level":"info","message":"Test completed successfully: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:49.916Z"}
+{"level":"info","message":"Test completed successfully: (TC-API-01)","timestamp":"2026-05-18T06:55:49.917Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-01)","timestamp":"2026-05-18T06:55:49.932Z"}
+{"level":"info","message":"Sending GET request for customer ID: 20226","timestamp":"2026-05-18T06:55:49.932Z"}
+{"level":"info","message":"Starting negative test for empty customer ID","timestamp":"2026-05-18T06:55:49.933Z"}
+{"level":"info","message":"Starting schema validation test: (TC-NEG-API-01)","timestamp":"2026-05-18T06:55:49.933Z"}
+{"level":"info","message":"Sending GET request with empty customer ID","timestamp":"2026-05-18T06:55:49.933Z"}
+{"level":"info","message":"Sending GET request for customer ID: 999999","timestamp":"2026-05-18T06:55:49.934Z"}
+{"level":"info","message":"GET Response Status: 200","timestamp":"2026-05-18T06:55:49.956Z"}
+{"level":"info","message":"GET Response Body: {\"id\":20226,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":-1000}","timestamp":"2026-05-18T06:55:49.959Z"}
+{"level":"info","message":"Customer ID: 14654","timestamp":"2026-05-18T06:55:49.961Z"}
+{"level":"info","message":"From Account ID: 20226","timestamp":"2026-05-18T06:55:49.961Z"}
+{"level":"info","message":"Sending POST request to create new account","timestamp":"2026-05-18T06:55:49.962Z"}
+{"level":"info","message":"POST Response Status: 200","timestamp":"2026-05-18T06:55:50.450Z"}
+{"level":"info","message":"Negative test for empty customer ID completed successfully","timestamp":"2026-05-18T06:55:50.450Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:50.451Z"}
+{"level":"info","message":"POST Response Body: {\"id\":29883,\"customerId\":14654,\"type\":\"CHECKING\",\"balance\":0}","timestamp":"2026-05-18T06:55:50.452Z"}
+{"level":"info","message":"Create Account API test completed successfully","timestamp":"2026-05-18T06:55:50.453Z"}
+{"level":"info","message":"Starting schema validation test: (TC-API-06)","timestamp":"2026-05-18T06:55:50.474Z"}
+{"level":"info","message":"Sending GET request for customer ID: 123456","timestamp":"2026-05-18T06:55:50.474Z"}
+{"level":"info","message":"Valid response received. Starting schema validation","timestamp":"2026-05-18T06:55:50.812Z"}
+{"level":"info","message":"Schema validation completed successfully","timestamp":"2026-05-18T06:55:50.826Z"}
+{"level":"info","message":"Negative response validation completed successfully","timestamp":"2026-05-18T06:55:50.926Z"}
+{"level":"info","message":"Starting Hybrid E2E Flow for Tarqsh_6","timestamp":"2026-05-18T06:55:52.546Z"}
+{"level":"info","message":"User is registered with username gz5tep_webkit","timestamp":"2026-05-18T06:55:53.465Z"}
+{"level":"info","message":"New Account is created Successfully and AccountId is 83052","timestamp":"2026-05-18T06:55:53.898Z"}
+{"level":"info","message":"Iniciation of the API testing with 83052","timestamp":"2026-05-18T06:55:54.195Z"}
+{"level":"info","message":"Hybrid E2E Flow completed successfully for gz5tep_webkit","timestamp":"2026-05-18T06:55:54.252Z"}

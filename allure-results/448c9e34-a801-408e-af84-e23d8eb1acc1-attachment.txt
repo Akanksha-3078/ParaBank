@@ -1,0 +1,4 @@
+ACCOUNT ID: 77835
+77835
+{ id: 77835, customerId: 49619, type: 'SAVINGS', balance: 100 }
+[2026-05-18T06:50:44.200Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T06-50-44-154Z.png

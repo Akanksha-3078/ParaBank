@@ -1,0 +1,3 @@
+79611
+[2026-05-18T06:52:04.255Z] User is created successfully with username 7tpau0_chromium and new AccountID is 79611
+[2026-05-18T06:52:04.387Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-52-04-339Z.png
