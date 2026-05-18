@@ -1,0 +1,4 @@
+ACCOUNT ID: 70620
+70620
+{ id: 70620, customerId: 45512, type: 'SAVINGS', balance: 100 }
+[2026-05-18T06:12:43.815Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T06-12-43-783Z.png

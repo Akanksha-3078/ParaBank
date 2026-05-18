@@ -1,5 +1,0 @@
-[2026-05-18T00:59:52.076Z] Login attempted with username: Shree_78
-[2026-05-18T00:59:52.228Z] Screenshot captured: screenshots/login-failure-Shree_78-2026-05-18T00-59-52-106Z.png
-false
-[2026-05-18T00:59:52.241Z] Login failure validated for username: Shree_78
-[2026-05-18T00:59:52.303Z] Screenshot captured: screenshots/login-failure-Shree_78-2026-05-18T00-59-52-241Z.png

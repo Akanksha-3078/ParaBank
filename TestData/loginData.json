@@ -7,14 +7,14 @@
   },
   {
     "testName": "(TC-LG-01) UserPresent",
-    "username": "Shree_78",
+    "username": "Sanvi_30",
     "password": "123",
     "expected": "success"
     
   },
   {
     "testName": "(TC-LG-03) IncorrectPassword",
-    "username": "Shree_78",
+    "username": "Sanvi_30",
     "password": "890",
     "expected": "failure"
     

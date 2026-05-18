@@ -47,10 +47,10 @@ for (const dataSet of hybridData) {
          console.log("ACCOUNT ID:", newAccountId);
         const response = await accountsAPI.getAccounts(newAccountId);
         console.log(newAccountId);
-        console.log(response);
         expect(response.status()).toBe(200);
 
         const responseBody = await response.json();
+        console.log(responseBody);
         expect(responseBody.id).toBe(Number(newAccountId));
         expect(responseBody.customerId).toBeDefined();
         expect(responseBody.type).toBe(dataSet.accountType);

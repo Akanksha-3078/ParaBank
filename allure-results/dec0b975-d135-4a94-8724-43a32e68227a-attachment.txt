@@ -1,0 +1,3 @@
+73839
+[2026-05-18T06:34:20.071Z] User is created successfully with username h7tzht_chromium and new AccountID is 73839
+[2026-05-18T06:34:20.286Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-34-20-249Z.png

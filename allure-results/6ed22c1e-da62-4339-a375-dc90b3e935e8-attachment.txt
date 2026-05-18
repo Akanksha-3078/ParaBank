@@ -1,0 +1,3 @@
+71730
+[2026-05-18T06:32:46.995Z] User is created successfully with username tp50aw_chromium and new AccountID is 71730
+[2026-05-18T06:32:47.170Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-32-47-108Z.png

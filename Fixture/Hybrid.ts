@@ -25,7 +25,9 @@ export const test = base.extend<CombinedFixtures>({
     
     apiContext: async ({}, use) => {
         const apiContext = await request.newContext({
-            baseURL: 'http://localhost:9090/parabank/services/bank/',
+            baseURL: 'http://localhost:9090/parabank/services/bank/'
+            // baseURL:'https://parabank.parasoft.com/parabank/services/bank/',
+            ,
             extraHTTPHeaders: {
                 Accept: 'application/json'
             }

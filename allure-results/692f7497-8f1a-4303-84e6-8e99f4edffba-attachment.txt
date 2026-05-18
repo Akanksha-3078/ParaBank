@@ -1,3 +1,0 @@
-API Response Time: 339 ms
-SUCCESS: Response time is within acceptable limit
-Response Status: 200

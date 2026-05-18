@@ -1,0 +1,4 @@
+ACCOUNT ID: 71952
+71952
+{ id: 71952, customerId: 46289, type: 'SAVINGS', balance: 100 }
+[2026-05-18T06:33:34.300Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T06-33-34-255Z.png

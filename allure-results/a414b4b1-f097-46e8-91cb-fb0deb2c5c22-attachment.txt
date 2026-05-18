@@ -1,0 +1,4 @@
+[2026-05-18T06:29:43.992Z] Login attempted with username: Akanksha_30
+[2026-05-18T06:29:44.169Z] Screenshot captured: screenshots/login-failure-Akanksha_30-2026-05-18T06-29-44-047Z.png
+true
+[2026-05-18T06:29:44.170Z] BUG: User logged in with invalid credentials: Akanksha_30

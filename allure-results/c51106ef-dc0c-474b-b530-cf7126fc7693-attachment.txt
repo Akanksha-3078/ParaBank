@@ -1,0 +1,3 @@
+17784
+[2026-05-18T06:13:15.646Z] User is created successfully with username huu57a_webkit and new AccountID is 17784
+[2026-05-18T06:13:17.309Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-13-17-247Z.png

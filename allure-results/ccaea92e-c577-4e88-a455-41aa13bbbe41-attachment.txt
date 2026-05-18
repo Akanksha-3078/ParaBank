@@ -1,9 +1,0 @@
-ACCOUNT ID: 61740
-61740
-APIResponse: 200 
-  Date: Mon, 18 May 2026 00:59:44 GMT
-  Content-Type: application/json
-  Transfer-Encoding: chunked
-  Keep-Alive: timeout=20
-  Connection: keep-alive
-[2026-05-18T00:59:44.363Z] Screenshot captured: screenshots/HYBRID-Tarqsh_6-2026-05-18T00-59-44-299Z.png

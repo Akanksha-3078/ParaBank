@@ -1,0 +1,3 @@
+75948
+[2026-05-18T06:43:37.330Z] User is created successfully with username mx63t8_chromium and new AccountID is 75948
+[2026-05-18T06:43:37.488Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-43-37-430Z.png

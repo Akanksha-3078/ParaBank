@@ -1,0 +1,5 @@
+[2026-05-18T06:32:42.789Z] Login attempted with username: invaliduser_899679
+[2026-05-18T06:32:42.852Z] Screenshot captured: screenshots/login-failure-invaliduser_899679-2026-05-18T06-32-42-802Z.png
+false
+[2026-05-18T06:32:42.861Z] Login failure validated for username: invaliduser_899679
+[2026-05-18T06:32:42.917Z] Screenshot captured: screenshots/login-failure-invaliduser_899679-2026-05-18T06-32-42-861Z.png

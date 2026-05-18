@@ -1,0 +1,1 @@
+[2026-05-18T06:32:47.756Z] Screenshot captured: screenshots/regression-failure-raghav_105-2026-05-18T06-32-47-700Z.png

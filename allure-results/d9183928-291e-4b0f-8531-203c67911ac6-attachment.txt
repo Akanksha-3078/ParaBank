@@ -1,0 +1,3 @@
+74616
+[2026-05-18T06:34:29.927Z] User is created successfully with username 0mntm1_webkit and new AccountID is 74616
+[2026-05-18T06:34:30.155Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-34-30-062Z.png

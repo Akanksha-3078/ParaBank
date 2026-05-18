@@ -1,0 +1,3 @@
+17118
+[2026-05-18T06:12:57.315Z] User is created successfully with username 1cedkk_chromium and new AccountID is 17118
+[2026-05-18T06:12:58.657Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T06-12-58-616Z.png

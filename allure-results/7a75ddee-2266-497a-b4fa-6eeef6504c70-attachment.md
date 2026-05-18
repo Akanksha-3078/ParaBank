@@ -1,0 +1,138 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: UI.spec.ts >> Registration Module >> @smoke @ui @flaky Validate login with username: (TC-LG-01) UserPresent
+- Location: tests/UI.spec.ts:67:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.fill: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('input[name="username"]')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Error 1015" [level=1] [ref=e5]
+    - generic [ref=e6]: "Ray ID: 9fd8ce5af979d81d •"
+    - generic [ref=e7]: 2026-05-18 06:29:11 UTC
+    - heading "You are being rate limited" [level=2] [ref=e8]
+  - generic [ref=e10]:
+    - heading "What happened?" [level=2] [ref=e11]
+    - paragraph [ref=e12]: The owner of this website (parabank.parasoft.com) has banned you temporarily from accessing this website.
+    - paragraph [ref=e13]:
+      - text: Please see
+      - link "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/" [ref=e14] [cursor=pointer]:
+        - /url: https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/
+      - text: for more details.
+  - generic [ref=e16]:
+    - text: Was this page helpful?
+    - button "Yes" [ref=e17] [cursor=pointer]
+    - button "No" [ref=e18] [cursor=pointer]
+  - paragraph [ref=e20]:
+    - generic [ref=e21]:
+      - text: "Cloudflare Ray ID:"
+      - strong [ref=e22]: 9fd8ce5af979d81d
+    - text: •
+    - generic [ref=e23]:
+      - text: "Your IP:"
+      - button "Click to reveal" [ref=e24] [cursor=pointer]
+      - text: •
+    - generic [ref=e25]:
+      - text: Performance & security by
+      - link "Cloudflare" [ref=e26] [cursor=pointer]:
+        - /url: https://www.cloudflare.com/5xx-error-landing
+```
+
+# Test source
+
+```ts
+  1  | import { expect, Locator, Page } from '@playwright/test';
+  2  | import { BasePage } from './BasePage';
+  3  | 
+  4  | export class LoginPage extends BasePage {
+  5  | 
+  6  |   readonly usernameInput: Locator;
+  7  |   readonly passwordInput: Locator;
+  8  |   readonly loginButton: Locator;
+  9  |   readonly errorMessage: Locator;
+  10 |   readonly logoutLink: Locator;
+  11 |   readonly openAccountLink: Locator;
+  12 | 
+  13 |   constructor(page: Page) {
+  14 | 
+  15 |     super(page);
+  16 |     
+  17 |     this.loginButton = page.getByRole('button', { name: 'Log In' });
+  18 |     this.logoutLink = page.getByRole('link', { name: 'Log Out' });
+  19 |     this.errorMessage = page.locator('.error');
+  20 |     this.usernameInput = page.locator('input[name="username"]');
+  21 |     this.passwordInput = page.locator('input[name="password"]');
+  22 |     this.openAccountLink = page.locator('a[href*="openaccount"]');
+  23 | 
+  24 |   }
+  25 | 
+  26 |   async navigate(path: string = 'https://parabank.parasoft.com/parabank/index.htm') {
+  27 |     await super.navigate(path);
+  28 |   }
+  29 | 
+  30 |   async login(username: string, password: string) {
+> 31 |     await this.usernameInput.fill(username);   
+     |                              ^ Error: locator.fill: Test timeout of 30000ms exceeded.
+  32 |     await this.passwordInput.fill(password);   
+  33 |     await this.loginButton.click();            
+  34 | }
+  35 | 
+  36 |     
+  37 |   async verifyOpenAccountLinkNotVisible() {
+  38 |     await expect(this.openAccountLink).toHaveCount(0);
+  39 |   }
+  40 | 
+  41 |   async verifyLoginSuccess() {
+  42 |     await expect(this.page).toHaveURL(/overview.htm/);
+  43 |     await expect(this.logoutLink).toBeVisible();
+  44 |   }
+  45 | 
+  46 |   // async isLoggedIn(){
+  47 |   //   return await this.logoutLink.isVisible({ timeout: 2000 });
+  48 |   // }
+  49 |   async isLoggedIn() {
+  50 |    return await this.page.locator('text=Log Out').isVisible();
+  51 | }
+  52 |   
+  53 |  
+  54 | //   async isLoggedIn(): Promise<boolean> {
+  55 | 
+  56 | //   return await this.page
+  57 | //     .locator('text=Accounts Overview')
+  58 | //     .isVisible()
+  59 | //     .catch(() => false);
+  60 | // }
+  61 |   
+  62 | 
+  63 |   async verifyLoginFailure(username: string,password: string) {
+  64 | 
+  65 |   const errorMessage = this.page.locator('.error');
+  66 |   if (username === '' && password === '') {
+  67 |     await expect(errorMessage).toContainText('Please enter a username and password.');
+  68 |   }
+  69 |   else {
+  70 |    await expect(errorMessage).toContainText(/The username and password could not be verified.|An internal error has occurred and has been logged./);
+  71 |   }
+  72 | }
+  73 | }
+```

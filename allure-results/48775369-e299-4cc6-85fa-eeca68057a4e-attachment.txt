@@ -1,0 +1,4 @@
+[2026-05-18T06:33:42.230Z] Login attempted with username: invaliduser_899679
+[2026-05-18T06:33:42.530Z] Screenshot captured: screenshots/login-failure-invaliduser_899679-2026-05-18T06-33-42-296Z.png
+true
+[2026-05-18T06:33:42.532Z] BUG: User logged in with invalid credentials: invaliduser_899679

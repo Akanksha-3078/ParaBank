@@ -1,3 +1,0 @@
-62961
-[2026-05-18T00:59:53.451Z] User is created successfully with username h9d761_Resv_78 and new AccountID is 62961
-[2026-05-18T00:59:53.668Z] Screenshot captured: screenshots/regression-failure-Resv_78-2026-05-18T00-59-53-610Z.png
