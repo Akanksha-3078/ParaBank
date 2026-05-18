@@ -95,4 +95,19 @@ export class OpenNewAccountPage extends BasePage {
   async getNewAccountId() {
     return await this.newAccountId.textContent();
   }
+
+  async getFirstFromAccountNumber(): Promise<string> {
+  await this.page.waitForFunction(() => {
+    const select = document.querySelector('#fromAccountId') as HTMLSelectElement;
+    return select && select.options.length > 0;
+  });
+
+  const firstAccountNumber = await this.page.locator('#fromAccountId option').first().textContent();
+
+  if (!firstAccountNumber) {
+    throw new Error('No account found in From Account dropdown');
+  }
+
+  return firstAccountNumber.trim();
+}
 }

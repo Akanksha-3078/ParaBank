@@ -17,15 +17,15 @@ export const test = base.extend<CombinedFixtures>({
     
     data: async ({}, use) => {
         await use({
-           // url: 'https://parabank.parasoft.com/parabank'
-           url: 'http://localhost:9090/parabank/'
+           //url: 'https://parabank.parasoft.com/parabank'
+          url: 'http://localhost:9090/parabank/'
         });
     },
 
     
     apiContext: async ({}, use) => {
         const apiContext = await request.newContext({
-            baseURL: 'https://parabank.parasoft.com/parabank/services/bank/',
+            baseURL: 'http://localhost:9090/parabank/services/bank/',
             extraHTTPHeaders: {
                 Accept: 'application/json'
             }

@@ -1,5 +1,0 @@
-[2026-05-17T21:24:32.492Z] Login attempted with username: Rick_30
-[2026-05-17T21:24:32.579Z] Screenshot captured: screenshots/login-failure-Rick_30-2026-05-17T21-24-32-534Z.png
-false
-[2026-05-17T21:24:32.586Z] Login failure validated for username: Rick_30
-[2026-05-17T21:24:32.669Z] Screenshot captured: screenshots/login-failure-Rick_30-2026-05-17T21-24-32-586Z.png

@@ -85,7 +85,6 @@ for (const dataSet of loginData) {
         // // Flaky / security issue
         console.log(isLoggedIn);
         if (isLoggedIn) {
-          //await homePage.logout();
 
           TestUtil.logMessage( `BUG: User logged in with invalid credentials: ${dataSet.username}` );
            throw new Error(`Security issue: Invalid login succeeded for user ${dataSet.username}`);
